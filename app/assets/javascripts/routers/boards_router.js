@@ -7,18 +7,12 @@ TrelloClone.Routers.Boards = Backbone.Router.extend({
 
   routes: {
     "": "index",
-    "boards/new": "new",
     "boards/:id": "show"
   },
 
   index: function () {
     var indexView = new TrelloClone.Views.BoardsIndex({ collection: this.collection });
     this._swapView(indexView);
-  },
-
-  new: function () {
-    var formView = new TrelloClone.Views.BoardForm({ collection: this.collection });
-    this._swapView(formView);
   },
 
   show: function (id) {

@@ -2,7 +2,11 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
   template: JST["boards/show"],
 
   initialize: function () {
-    this.listenTo(this.model, "change", this.render);
+    this.listenTo(this.model, "sync", this.render);
+  },
+
+  events: {
+    "click .delete-button": "deleteBoard"
   },
 
   addList: function (list) {
@@ -11,7 +15,17 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
   render: function () {
     var content = this.template({ board: this.model });
     this.$el.html(content);
+    var listIndexView = new TrelloClone.Views.ListsIndex({ model: this.model, collection: this.model.lists() });
+    $('.list-index').html(listIndexView.render().$el);
 
     return this;
+  },
+
+  deleteBoard: function () {
+    this.model.destroy({
+      success: function () {
+        Backbone.history.navigate("" , { trigger: true });
+      }
+    });
   }
 });

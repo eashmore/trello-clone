@@ -2,7 +2,7 @@ TrelloClone.Views.BoardIndexItem = Backbone.View.extend({
   template: JST["boards/index_item"],
 
   events: {
-    "click li": "toShow"
+    "click a": "toShow"
   },
 
   render: function () {

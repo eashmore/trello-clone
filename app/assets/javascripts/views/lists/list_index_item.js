@@ -3,9 +3,9 @@ TrelloClone.Views.ListIndexItem = Backbone.View.extend({
 
   tagName: 'li',
 
-  events: {
-    'click .delete-link': 'deleteLink'
-  },
+  // events: {
+  //   'click .delete-link': 'deleteLink'
+  // },
 
   render: function () {
     var content = this.template({ list: this.model });
@@ -14,9 +14,9 @@ TrelloClone.Views.ListIndexItem = Backbone.View.extend({
     return this;
   },
 
-  deleteLink: function (event) {
-    event.preventDefault();
-    this.collection.remove(this.model);
-    this.model.destroy();
-  }
+  // deleteLink: function (event) {
+  //   event.preventDefault();
+  //   this.collection.remove(this.model);
+  //   this.model.destroy();
+  // }
 });

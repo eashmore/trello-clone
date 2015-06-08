@@ -2,7 +2,7 @@ TrelloClone.Views.ListsIndex = Backbone.CompositeView.extend({
   template: JST['lists/index'],
 
   initialize: function () {
-    this.listenTo(this.collection, 'change sync remove', this.render);
+    this.listenTo(this.collection, 'change sync', this.render);
     this.listenTo(this.collection, 'add', this.addList);
 
     this.collection.each(this.addList.bind(this));

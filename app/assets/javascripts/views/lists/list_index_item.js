@@ -21,7 +21,7 @@ TrelloClone.Views.ListIndexItem = Backbone.View.extend({
 
   deleteLink: function (event) {
     event.preventDefault();
-    this.collection.remove(this.model);
+    this.remove();
     this.model.destroy();
   }
 });

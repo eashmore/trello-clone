@@ -1,8 +1,6 @@
 TrelloClone.Views.ListIndexItem = Backbone.View.extend({
   template: JST["lists/index_item"],
 
-  tagName: 'li',
-
   // events: {
   //   'click .delete-link': 'deleteLink'
   // },

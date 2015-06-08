@@ -16,3 +16,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.panel {
+  background-color: #7ac5cd;
+}
+
+.panel-default > .panel-heading {
+  background-color: light-gray;
+}

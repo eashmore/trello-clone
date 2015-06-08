@@ -1,4 +1,4 @@
-json.extract! list, :title, :id, :board_id
+json.extract! list, :title, :id, :board_id, :ord
 
 json.cards do
   json.array!(list.cards) do |card|

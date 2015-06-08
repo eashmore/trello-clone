@@ -8,7 +8,11 @@ TrelloClone.Views.ListForm = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html(this.template({ board_id: this.model.get('id') }));
+    var ord = 0;
+    if (this.collection.length){
+      ord = this.collection.last().get('ord');
+    }
+    this.$el.html(this.template({ board_id: this.model.get('id'), ord: (ord + 1) }));
 
     return this;
   },

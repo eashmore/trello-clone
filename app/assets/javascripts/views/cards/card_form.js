@@ -12,8 +12,12 @@ TrelloClone.Views.CardForm = Backbone.View.extend({
   },
 
   render: function () {
+    var ord = 0;
+    if (this.collection.length) {
+      ord = this.collection.last().get('ord');
+    }
     var list_id = this.list.get('id');
-    var content = this.template({ list_id: list_id });
+    var content = this.template({ list_id: list_id, ord: ord + 1 });
     this.$el.html(content);
     return this;
   },

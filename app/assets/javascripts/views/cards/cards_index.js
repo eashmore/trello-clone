@@ -15,7 +15,7 @@ TrelloClone.Views.CardsIndex = Backbone.CompositeView.extend({
 
   render: function () {
     this.$el.html(this.template);
-    this.$el.find('#sortable').sortable({
+    this.$el.find('.cards-list').sortable({
       connectWith: '.cards-list'
     });
     this.attachSubviews();

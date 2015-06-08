@@ -2,6 +2,10 @@ TrelloClone.Collections.Cards = Backbone.Collection.extend({
   url: "/api/cards",
   model: TrelloClone.Models.Card,
 
+  comparator: function (card) {
+    return card.get('ord');
+  },
+
   getOrFetch: function (id) {
     var cards = this;
     var card = cards.get(id);

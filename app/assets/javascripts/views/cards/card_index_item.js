@@ -2,7 +2,7 @@ TrelloClone.Views.CardIndexItem = Backbone.View.extend({
   template: JST["cards/index_item"],
 
   events: {
-    'click button': 'destroyCard'
+    'click button': 'destroyCard',
   },
 
   render: function () {

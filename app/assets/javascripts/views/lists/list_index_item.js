@@ -9,7 +9,7 @@ TrelloClone.Views.ListIndexItem = Backbone.View.extend({
     var content = this.template({ list: this.model });
     this.$el.html(content);
 
-    var cardsView = new TrelloClone.Views.CardsIndex({ collection: this.model.cards() });
+    var cardsView = new TrelloClone.Views.CardsIndex({ collection: this.model.cards(), boardId: this.model.get('board_id') });
     var panel = this.$el.find('.panel');
     panel.append(cardsView.render().$el);
 

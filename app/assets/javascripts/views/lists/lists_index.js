@@ -19,9 +19,7 @@ TrelloClone.Views.ListsIndex = Backbone.CompositeView.extend({
     var formView = new TrelloClone.Views.ListForm({ model: this.model, collection: this.collection });
     this.$el.append(formView.render().$el);
 
-    this.$el.find('.list-list').sortable({
-      connectWith: '.row'
-    });
+    this.$el.find('.list-list').sortable();
 
     this.attachSubviews();
 

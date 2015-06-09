@@ -3,7 +3,7 @@
 #  - its lists
 #    - the cards for each list
 
-json.extract! @board, :title
+json.extract! @board, :title, :id
 
 json.lists do
   json.array!(@board.lists) do |list|
